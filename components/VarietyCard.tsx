@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import type { Variety } from "@/lib/varieties";
+import { imgPath } from "@/lib/imgPath";
 
 const slugToImage: Record<string, string> = {
   "export-royal-sindhri": "/images/varieties/sindhri.svg",
@@ -50,7 +51,7 @@ export default function VarietyCard({ variety, index = 0 }: Props) {
         }`}
       >
         <Image
-          src={img}
+          src={imgPath(img)}
           alt={variety.name}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
@@ -66,10 +67,10 @@ export default function VarietyCard({ variety, index = 0 }: Props) {
       </div>
 
       {/* Content */}
-      <div className="flex flex-1 flex-col px-7 pb-7 pt-6">
+      <div className="flex flex-1 flex-col px-5 pb-6 pt-5 sm:px-7 sm:pb-7 sm:pt-6">
         <div className="flex items-baseline justify-between gap-3">
           <h3
-            className="font-display text-[28px] font-medium leading-tight tracking-[-0.015em] text-ink"
+            className="font-display text-[24px] font-medium leading-tight tracking-[-0.015em] text-ink sm:text-[28px]"
             style={{ fontVariationSettings: '"SOFT" 60, "opsz" 36' }}
           >
             {variety.name}

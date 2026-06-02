@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import FarmVisitForm from "@/components/FarmVisitForm";
 import SectionHeading from "@/components/SectionHeading";
+import { imgPath } from "@/lib/imgPath";
 
 export const metadata = {
   title: "Farm Visit",
@@ -53,7 +54,7 @@ export default function FarmVisitPage() {
           <Reveal>
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] ring-1 ring-bark/10 shadow-soft">
               <Image
-                src="/images/farm/orchard-rows.svg"
+                src={imgPath("/images/farm/orchard-rows.svg")}
                 alt="Thaheem orchard"
                 fill
                 sizes="(min-width:1024px) 40vw, 90vw"

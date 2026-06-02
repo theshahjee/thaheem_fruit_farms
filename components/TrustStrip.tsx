@@ -14,7 +14,7 @@ const items = [
 export default function TrustStrip() {
   return (
     <section className="relative mt-20 border-y border-ink/15 bg-paper-100/60 py-5">
-      <Marquee items={items} separator="✦" />
+      <Marquee items={items} separator="·" />
     </section>
   );
 }

@@ -64,7 +64,6 @@ const config: Config = {
         editorial: ["var(--font-editorial)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         stamp: ["var(--font-stamp)", "ui-monospace", "monospace"],
-        urdu: ["var(--font-urdu)", "serif"],
       },
       letterSpacing: {
         stamp: "0.32em",

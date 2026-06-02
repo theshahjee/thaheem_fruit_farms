@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { imgPath } from "@/lib/imgPath";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -16,7 +17,7 @@ export default function Hero() {
   });
 
   return (
-    <section className="relative isolate overflow-hidden pt-32 md:pt-40">
+    <section className="relative isolate overflow-hidden pt-24 sm:pt-28 md:pt-36 lg:pt-40">
       {/* top metadata bar */}
       <div className="container-page">
         <motion.div
@@ -33,7 +34,7 @@ export default function Hero() {
       </div>
 
       {/* Hero body */}
-      <div className="container-page relative grid gap-12 pt-12 md:pt-16 lg:grid-cols-12 lg:gap-10">
+      <div className="container-page relative grid gap-10 pt-10 sm:pt-12 md:pt-16 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-7">
           <motion.div {...rise(0.05)} className="section-index">
             <span>§ 01 — The Orchard</span>
@@ -41,7 +42,7 @@ export default function Hero() {
 
           <motion.h1
             {...rise(0.1)}
-            className="title-flex mt-6 font-display text-[clamp(2.8rem,7.2vw,7rem)] font-medium leading-[0.92] tracking-[-0.025em] text-ink"
+            className="title-flex mt-6 font-display text-[clamp(2.25rem,7.2vw,7rem)] font-medium leading-[0.95] tracking-[-0.025em] text-ink"
             style={{ fontVariationSettings: '"SOFT" 60, "opsz" 144' }}
           >
             The mango,{" "}
@@ -70,17 +71,21 @@ export default function Hero() {
             </Link>
           </motion.div>
 
-          {/* Bilingual heritage stamp */}
-          <motion.div {...rise(0.4)} className="mt-12 flex items-end gap-5">
-            <span
-              className="font-urdu text-3xl text-farm-700"
-              dir="rtl"
-              lang="ur"
-            >
-              تھاہیم فروٹ فارمز
+          {/* Heritage signature */}
+          <motion.div
+            {...rise(0.4)}
+            className="mt-12 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-ink/15 pt-6 md:mt-14"
+          >
+            <span className="font-stamp text-[10px] uppercase tracking-stamp text-ink/55 sm:text-[10.5px]">
+              Est. 1982
             </span>
-            <span className="pb-1 font-stamp text-[10.5px] uppercase tracking-stamp text-ink/55">
-              Established 1982 · Ghouspur Thaheem
+            <span className="h-3 w-px bg-ink/25" />
+            <span className="font-stamp text-[10px] uppercase tracking-stamp text-ink/55 sm:text-[10.5px]">
+              Ghouspur Thaheem
+            </span>
+            <span className="h-3 w-px bg-ink/25" />
+            <span className="font-stamp text-[10px] uppercase tracking-stamp text-ink/55 sm:text-[10.5px]">
+              Punjab · Pakistan
             </span>
           </motion.div>
         </div>
@@ -105,7 +110,7 @@ export default function Hero() {
 
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[6px] ring-1 ring-ink/15 shadow-ink">
               <Image
-                src="/images/hero/hero-orchard.svg"
+                src={imgPath("/images/hero/hero-orchard.svg")}
                 alt="Sunset over the Thaheem Fruit Farms orchard"
                 fill
                 priority
@@ -132,7 +137,7 @@ export default function Hero() {
               className="absolute -bottom-10 -left-10 hidden h-32 w-32 overflow-hidden rounded-full ring-4 ring-paper shadow-seal md:block"
             >
               <Image
-                src="/images/logo/logo.jpeg"
+                src={imgPath("/images/logo/logo.jpeg")}
                 alt="Thaheem Fruit Farms seal"
                 fill
                 sizes="128px"

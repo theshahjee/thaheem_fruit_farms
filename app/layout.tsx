@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope, Newsreader, DM_Mono, Noto_Nastaliq_Urdu } from "next/font/google";
+import { Fraunces, Manrope, Newsreader, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -31,13 +31,6 @@ const stamp = DM_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
   variable: "--font-stamp",
-  display: "swap",
-});
-
-const urdu = Noto_Nastaliq_Urdu({
-  subsets: ["arabic"],
-  weight: ["500", "700"],
-  variable: "--font-urdu",
   display: "swap",
 });
 
@@ -76,7 +69,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${display.variable} ${editorial.variable} ${sans.variable} ${stamp.variable} ${urdu.variable}`}
+      className={`${display.variable} ${editorial.variable} ${sans.variable} ${stamp.variable}`}
     >
       <body className="paper-bg">
         <Navbar />

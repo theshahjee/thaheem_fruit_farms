@@ -16,6 +16,12 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 body {
@@ -135,7 +141,7 @@ body {
   }
 
   .section {
-    @apply py-20 md:py-28;
+    @apply py-16 sm:py-20 md:py-28;
   }
 
   /* Numbered section index */

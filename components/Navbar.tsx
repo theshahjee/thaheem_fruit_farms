@@ -33,8 +33,8 @@ export default function Navbar() {
           : "bg-transparent"
       )}
     >
-      <div className="container-page flex h-[76px] items-center justify-between">
-        <Logo size={44} />
+      <div className="container-page flex h-[68px] items-center justify-between sm:h-[76px]">
+        <Logo size={40} />
 
         <nav className="hidden items-center gap-1 lg:flex">
           {nav.map((item) => {

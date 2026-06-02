@@ -5,6 +5,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { brand } from "@/lib/brand";
+import { imgPath } from "@/lib/imgPath";
 
 export const metadata = {
   title: "About Us",
@@ -68,7 +69,7 @@ export default function AboutPage() {
           <Reveal>
             <div className="relative aspect-[5/6] overflow-hidden rounded-[2.5rem] ring-1 ring-bark/10 shadow-soft">
               <Image
-                src="/images/farm/orchard-rows.svg"
+                src={imgPath("/images/farm/orchard-rows.svg")}
                 alt="The Thaheem orchard"
                 fill
                 sizes="(min-width:1024px) 40vw, 90vw"

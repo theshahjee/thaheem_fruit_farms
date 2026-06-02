@@ -18,14 +18,11 @@ export default function Footer() {
           className="mt-3 font-display text-[clamp(3rem,9vw,9rem)] font-medium leading-[0.92] tracking-[-0.03em] text-cream-50"
           style={{ fontVariationSettings: '"SOFT" 60, "opsz" 144' }}
         >
-          Thaheem.
+          Thaheem<em className="font-display italic text-mango-300">.</em>
         </h3>
-        <p
-          className="mt-2 font-urdu text-3xl text-mango-300"
-          dir="rtl"
-          lang="ur"
-        >
-          تھاہیم فروٹ فارمز
+        <p className="mt-4 max-w-md font-editorial text-[15px] leading-relaxed text-cream-100/70">
+          A family orchard near Multan, growing premium export-grade mangoes
+          for four decades.
         </p>
       </div>
 
