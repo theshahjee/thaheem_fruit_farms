@@ -17,12 +17,12 @@ export default function Hero() {
   });
 
   return (
-    <section className="relative isolate overflow-hidden pt-20 sm:pt-24 md:pt-28 lg:pt-32">
+    <section className="relative isolate overflow-hidden pt-[92px] sm:pt-[100px] lg:pt-[108px]">
       {/* top metadata bar */}
       <div className="container-page">
         <motion.div
           {...rise(0)}
-          className="border-b border-ink/15 pb-5 font-stamp text-[10px] font-medium uppercase tracking-stamp text-ink/60 sm:text-[10.5px]"
+          className="border-b border-ink/15 pb-3 font-stamp text-[10px] font-medium uppercase tracking-stamp text-ink/60 sm:pb-4 sm:text-[10.5px]"
         >
           <p>
             <span className="text-ink">Vol. 42</span> · Season 2026 · Multan, Punjab
@@ -31,14 +31,14 @@ export default function Hero() {
       </div>
 
       {/* Section index */}
-      <div className="container-page pt-8 sm:pt-10 md:pt-12">
+      <div className="container-page pt-4 sm:pt-5">
         <motion.div {...rise(0.05)} className="section-index">
           <span>§ 01 — The Orchard</span>
         </motion.div>
       </div>
 
       {/* Hero body */}
-      <div className="container-page relative grid gap-8 pt-6 sm:gap-10 sm:pt-8 md:pt-10 lg:grid-cols-12 lg:gap-10">
+      <div className="container-page relative grid gap-8 pt-4 sm:gap-10 sm:pt-6 md:pt-8 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-7">
           <motion.h1
             {...rise(0.1)}
