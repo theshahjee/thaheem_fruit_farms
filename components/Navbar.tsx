@@ -70,7 +70,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 bg-paper-50 text-ink"
+          className="lg:hidden inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-cream-50 shadow-soft transition-colors duration-300 active:bg-bark"
           aria-label="Toggle menu"
           aria-expanded={open}
         >

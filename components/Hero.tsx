@@ -42,7 +42,7 @@ export default function Hero() {
         <div className="lg:col-span-7">
           <motion.h1
             {...rise(0.1)}
-            className="title-flex font-display text-[clamp(2.25rem,7.2vw,7rem)] font-medium leading-[0.95] tracking-[-0.025em] text-ink"
+            className="title-flex font-display text-[clamp(2rem,7.2vw,7rem)] font-medium leading-[1] tracking-[-0.025em] text-ink [overflow-wrap:anywhere] sm:leading-[0.95]"
             style={{ fontVariationSettings: '"SOFT" 60, "opsz" 144' }}
           >
             The mango,{" "}
