@@ -17,7 +17,7 @@ export default function Hero() {
   });
 
   return (
-    <section className="relative isolate overflow-hidden pt-24 sm:pt-28 md:pt-36 lg:pt-40">
+    <section className="relative isolate overflow-hidden pt-20 sm:pt-24 md:pt-28 lg:pt-32">
       {/* top metadata bar */}
       <div className="container-page">
         <motion.div
@@ -31,14 +31,14 @@ export default function Hero() {
       </div>
 
       {/* Section index */}
-      <div className="container-page pt-12 sm:pt-14 md:pt-16">
+      <div className="container-page pt-8 sm:pt-10 md:pt-12">
         <motion.div {...rise(0.05)} className="section-index">
           <span>§ 01 — The Orchard</span>
         </motion.div>
       </div>
 
       {/* Hero body */}
-      <div className="container-page relative grid gap-10 pt-8 sm:pt-10 md:pt-12 lg:grid-cols-12 lg:gap-10">
+      <div className="container-page relative grid gap-8 pt-6 sm:gap-10 sm:pt-8 md:pt-10 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-7">
           <motion.h1
             {...rise(0.1)}
