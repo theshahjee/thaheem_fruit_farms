@@ -18,24 +18,17 @@ export default function SectionHeading({
   const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
   return (
     <Reveal className={`${alignClass} max-w-3xl`}>
-      <div
-        className={`flex items-center gap-3 ${
-          align === "center" ? "justify-center" : ""
-        }`}
-      >
-        {index && (
-          <span className="font-stamp text-[10.5px] font-medium uppercase tracking-stamp text-ink/55">
-            § {index}
-          </span>
-        )}
-        {eyebrow && (
-          <span className="font-stamp text-[10.5px] font-medium uppercase tracking-stamp text-mango-700">
+      {(index || eyebrow) && (
+        <div className="section-index">
+          <span>
+            {index && <>§ {index}</>}
+            {index && eyebrow && " — "}
             {eyebrow}
           </span>
-        )}
-      </div>
+        </div>
+      )}
       <h2
-        className="h-display-sm mt-4 font-medium"
+        className="h-display-sm mt-5 font-medium"
         style={{ fontVariationSettings: '"SOFT" 60, "opsz" 60' }}
       >
         {title}

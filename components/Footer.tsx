@@ -10,17 +10,25 @@ export default function Footer() {
       <div className="pointer-events-none absolute inset-0 opacity-25 mix-blend-overlay grain-cream" />
 
       {/* Big editorial wordmark */}
-      <div className="relative container-page pt-20">
-        <p className="font-stamp text-[10.5px] uppercase tracking-stamp text-cream-100/60">
+      <div className="relative container-page pt-16 sm:pt-20">
+        <p className="font-stamp text-[10px] uppercase tracking-stamp text-cream-100/60 sm:text-[10.5px]">
           Est · 1982 · Multan · Pakistan
         </p>
-        <h3
-          className="mt-3 font-display text-[clamp(3rem,9vw,9rem)] font-medium leading-[0.92] tracking-[-0.03em] text-cream-50"
-          style={{ fontVariationSettings: '"SOFT" 60, "opsz" 144' }}
-        >
-          Thaheem<em className="font-display italic text-mango-300">.</em>
-        </h3>
-        <p className="mt-4 max-w-md font-editorial text-[15px] leading-relaxed text-cream-100/70">
+        <div className="mt-3 leading-[0.9]">
+          <h3
+            className="font-display text-[clamp(3rem,9vw,9rem)] font-medium tracking-[-0.03em] text-cream-50"
+            style={{ fontVariationSettings: '"SOFT" 60, "opsz" 144' }}
+          >
+            Thaheem
+          </h3>
+          <p
+            className="mt-2 font-display text-[clamp(1.1rem,3vw,2rem)] font-medium tracking-[-0.01em] text-cream-100/80 sm:mt-3"
+            style={{ fontVariationSettings: '"SOFT" 60, "opsz" 48' }}
+          >
+            Fruit Farms
+          </p>
+        </div>
+        <p className="mt-6 max-w-md font-editorial text-[15px] leading-relaxed text-cream-100/70">
           A family orchard near Multan, growing premium export-grade mangoes
           for four decades.
         </p>

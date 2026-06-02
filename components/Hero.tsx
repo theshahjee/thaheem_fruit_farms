@@ -35,16 +35,19 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Hero body */}
-      <div className="container-page relative grid gap-10 pt-10 sm:pt-12 md:pt-16 lg:grid-cols-12 lg:gap-10">
-        <div className="lg:col-span-7">
-          <motion.div {...rise(0.05)} className="section-index">
-            <span>§ 01 — The Orchard</span>
-          </motion.div>
+      {/* Section index */}
+      <div className="container-page pt-12 sm:pt-14 md:pt-16">
+        <motion.div {...rise(0.05)} className="section-index">
+          <span>§ 01 — The Orchard</span>
+        </motion.div>
+      </div>
 
+      {/* Hero body */}
+      <div className="container-page relative grid gap-10 pt-8 sm:pt-10 md:pt-12 lg:grid-cols-12 lg:gap-10">
+        <div className="lg:col-span-7">
           <motion.h1
             {...rise(0.1)}
-            className="title-flex mt-6 font-display text-[clamp(2.25rem,7.2vw,7rem)] font-medium leading-[0.95] tracking-[-0.025em] text-ink"
+            className="title-flex font-display text-[clamp(2.25rem,7.2vw,7rem)] font-medium leading-[0.95] tracking-[-0.025em] text-ink"
             style={{ fontVariationSettings: '"SOFT" 60, "opsz" 144' }}
           >
             The mango,{" "}

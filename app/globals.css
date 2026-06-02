@@ -144,14 +144,15 @@ body {
     @apply py-16 sm:py-20 md:py-28;
   }
 
-  /* Numbered section index */
+  /* Numbered section index — centered, consistent across all sections */
   .section-index {
     font-family: var(--font-stamp);
-    @apply flex items-center gap-3 text-[10.5px] font-medium uppercase tracking-stamp text-ink/55;
+    @apply flex w-full items-center justify-center gap-3 text-center text-[10px] font-medium uppercase tracking-stamp text-ink/55 sm:text-[10.5px];
   }
-  .section-index::before {
+  .section-index::before,
+  .section-index::after {
     content: "";
-    @apply h-px w-10 bg-ink/30;
+    @apply h-px w-10 bg-ink/25 sm:w-14;
   }
 }
 

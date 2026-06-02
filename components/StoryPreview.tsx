@@ -7,7 +7,14 @@ import { imgPath } from "@/lib/imgPath";
 export default function StoryPreview() {
   return (
     <section className="section relative overflow-hidden border-y border-ink/10 bg-paper-100">
-      <div className="container-page grid items-center gap-10 sm:gap-12 lg:grid-cols-12 lg:gap-16">
+      <div className="container-page">
+        <Reveal>
+          <div className="section-index">
+            <span>§ 03 — The Heritage</span>
+          </div>
+        </Reveal>
+      </div>
+      <div className="container-page mt-10 grid items-center gap-10 sm:gap-12 sm:mt-12 lg:grid-cols-12 lg:gap-16">
         <Reveal className="lg:col-span-5">
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[6px] ring-1 ring-ink/15 shadow-ink">
@@ -42,12 +49,8 @@ export default function StoryPreview() {
         </Reveal>
 
         <Reveal delay={0.1} className="lg:col-span-7">
-          <div className="section-index">
-            <span>§ 03 — The Heritage</span>
-          </div>
-
           <h2
-            className="h-display mt-6 font-medium"
+            className="h-display font-medium"
             style={{ fontVariationSettings: '"SOFT" 60, "opsz" 96' }}
           >
             Rooted in <em className="font-display italic text-mango-600">tradition</em>.

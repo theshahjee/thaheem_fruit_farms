@@ -30,13 +30,17 @@ const principles = [
 export default function WhyUs() {
   return (
     <section className="section relative overflow-hidden">
-      <div className="container-page grid gap-16 lg:grid-cols-12">
-        <Reveal className="lg:col-span-4">
+      <div className="container-page">
+        <Reveal>
           <div className="section-index">
             <span>§ 04 — The Standard</span>
           </div>
+        </Reveal>
+      </div>
+      <div className="container-page mt-10 grid gap-12 sm:mt-12 lg:grid-cols-12 lg:gap-16">
+        <Reveal className="lg:col-span-4">
           <h2
-            className="h-display mt-6 font-medium"
+            className="h-display font-medium"
             style={{ fontVariationSettings: '"SOFT" 60, "opsz" 96' }}
           >
             Why

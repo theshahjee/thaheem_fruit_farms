@@ -14,9 +14,9 @@ export default function CTABanner() {
           <div className="pointer-events-none absolute inset-0 opacity-30 mix-blend-overlay grain-cream" />
 
           <div className="relative">
-            <span className="font-stamp text-[10.5px] font-medium uppercase tracking-stamp text-mango-300">
-              § 05 — Pre-Booking Open
-            </span>
+            <div className="section-index !text-cream-100/65 [&::before]:!bg-cream-100/30 [&::after]:!bg-cream-100/30">
+              <span>§ 05 — Pre-Booking Open</span>
+            </div>
             <h2
               className="mt-6 font-display text-[clamp(2.4rem,5vw,4.5rem)] font-medium leading-[1] tracking-[-0.02em] text-cream-50"
               style={{ fontVariationSettings: '"SOFT" 60, "opsz" 96' }}
