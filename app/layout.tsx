@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SideRail from "@/components/SideRail";
 import { brand } from "@/lib/brand";
 
 const display = Fraunces({
@@ -73,6 +74,7 @@ export default function RootLayout({
     >
       <body className="paper-bg flex min-h-screen flex-col">
         <Navbar />
+        <SideRail />
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
