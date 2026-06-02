@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="12 No Ratool mango">
+  <defs>
+    <radialGradient id="r12-body" cx="38%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#FFE9A0"/>
+      <stop offset="40%" stop-color="#EBA826"/>
+      <stop offset="78%" stop-color="#9C6A0A"/>
+      <stop offset="100%" stop-color="#4F3105"/>
+    </radialGradient>
+    <radialGradient id="r12-leaf" cx="40%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#92C460"/>
+      <stop offset="100%" stop-color="#234718"/>
+    </radialGradient>
+    <radialGradient id="r12-highlight" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#FFF7C0" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFF7C0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g transform="translate(140,110)">
+    <ellipse cx="175" cy="395" rx="130" ry="18" fill="#000" opacity="0.12"/>
+    <path d="M95 70 C 40 120 35 220 90 290 C 165 365 250 350 285 280 C 320 210 310 110 250 55 C 200 5 130 25 95 70 Z" fill="url(#r12-body)"/>
+    <ellipse cx="150" cy="160" rx="55" ry="26" fill="url(#r12-highlight)"/>
+    <path d="M160 5 C 200 -18 260 -15 290 10 C 265 38 215 48 180 38 Z" fill="url(#r12-leaf)"/>
+    <path d="M185 14 C 220 8 250 8 280 14" stroke="#0D1B08" stroke-width="2" fill="none" opacity="0.4"/>
+  </g>
+</svg>

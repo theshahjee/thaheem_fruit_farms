@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Sindhri mango">
+  <defs>
+    <radialGradient id="sindhri-body" cx="38%" cy="32%" r="78%">
+      <stop offset="0%" stop-color="#FFF1B8"/>
+      <stop offset="35%" stop-color="#FFC75A"/>
+      <stop offset="70%" stop-color="#E89117"/>
+      <stop offset="100%" stop-color="#7A4404"/>
+    </radialGradient>
+    <radialGradient id="sindhri-leaf" cx="40%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#8FBE5C"/>
+      <stop offset="100%" stop-color="#234718"/>
+    </radialGradient>
+    <radialGradient id="sindhri-highlight" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#FFFCE0" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#FFFCE0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g transform="translate(80,70)">
+    <ellipse cx="240" cy="455" rx="180" ry="20" fill="#000" opacity="0.12"/>
+    <path d="M120 80 C 60 130 40 230 80 320 C 140 430 280 450 360 380 C 440 310 450 200 400 110 C 350 30 230 10 165 35 C 145 45 130 60 120 80 Z" fill="url(#sindhri-body)"/>
+    <ellipse cx="190" cy="180" rx="80" ry="40" fill="url(#sindhri-highlight)"/>
+    <path d="M225 25 C 270 -5 345 -10 380 15 C 360 50 295 60 235 50 Z" fill="url(#sindhri-leaf)"/>
+    <path d="M250 30 C 290 22 330 22 365 30" stroke="#0D1B08" stroke-width="2" fill="none" opacity="0.4"/>
+  </g>
+</svg>
