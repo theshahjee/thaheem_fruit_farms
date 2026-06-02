@@ -14,19 +14,14 @@ export default function Footer() {
         <p className="font-stamp text-[10px] uppercase tracking-stamp text-cream-100/60 sm:text-[10.5px]">
           Est · 1982 · Multan · Pakistan
         </p>
-        <div className="mt-3 leading-[0.9]">
-          <h3
-            className="font-display text-[clamp(3rem,9vw,9rem)] font-medium tracking-[-0.03em] text-cream-50"
-            style={{ fontVariationSettings: '"SOFT" 60, "opsz" 144' }}
-          >
-            Thaheem
-          </h3>
-          <p
-            className="mt-2 font-display text-[clamp(1.1rem,3vw,2rem)] font-medium tracking-[-0.01em] text-cream-100/80 sm:mt-3"
-            style={{ fontVariationSettings: '"SOFT" 60, "opsz" 48' }}
-          >
+        <div
+          className="mt-3 font-display text-[clamp(3rem,9vw,9rem)] font-medium leading-[0.9] tracking-[-0.03em]"
+          style={{ fontVariationSettings: '"SOFT" 60, "opsz" 144' }}
+        >
+          <span className="block text-cream-50">Thaheem</span>
+          <span className="mt-1 block italic text-mango-400 sm:mt-2">
             Fruit Farms
-          </p>
+          </span>
         </div>
         <p className="mt-6 max-w-md font-editorial text-[15px] leading-relaxed text-cream-100/70">
           A family orchard near Multan, growing premium export-grade mangoes

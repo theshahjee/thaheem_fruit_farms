@@ -22,16 +22,11 @@ export default function Hero() {
       <div className="container-page">
         <motion.div
           {...rise(0)}
-          className="flex flex-col items-start gap-2 border-b border-ink/15 pb-5 font-stamp text-[10px] font-medium uppercase tracking-stamp text-ink/60 sm:text-[10.5px]"
+          className="border-b border-ink/15 pb-5 font-stamp text-[10px] font-medium uppercase tracking-stamp text-ink/60 sm:text-[10.5px]"
         >
           <p>
             <span className="text-ink">Vol. 42</span> · Season 2026 · Multan, Punjab
           </p>
-          <ul className="flex flex-col items-start gap-1.5">
-            <li>Family-grown</li>
-            <li>Hand-graded</li>
-            <li>Farm-direct</li>
-          </ul>
         </motion.div>
       </div>
 
