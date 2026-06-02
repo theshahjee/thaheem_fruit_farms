@@ -125,7 +125,8 @@ body {
 
   .editorial {
     font-family: var(--font-editorial);
-    @apply text-[17px] leading-[1.65] text-ink/80;
+    @apply text-[15.5px] leading-[1.65] text-ink/80 sm:text-[17px];
+    overflow-wrap: anywhere;
   }
 
   .eyebrow {

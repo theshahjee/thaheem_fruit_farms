@@ -38,13 +38,13 @@ export default function Logo({
       {withText && (
         <span className="min-w-0 leading-tight">
           <span
-            className={`block whitespace-nowrap font-display text-[15px] font-semibold tracking-[-0.01em] sm:text-[17px] ${textColor}`}
+            className={`block truncate font-display text-[13px] font-semibold tracking-[-0.01em] xs:text-[14px] sm:text-[17px] ${textColor}`}
             style={{ fontVariationSettings: '"SOFT" 60, "opsz" 24' }}
           >
             Thaheem Fruit Farms
           </span>
           <span
-            className={`mt-0.5 block whitespace-nowrap font-stamp text-[9px] font-medium uppercase tracking-stamp sm:text-[9.5px] ${tagColor}`}
+            className={`mt-0.5 hidden whitespace-nowrap font-stamp text-[9px] font-medium uppercase tracking-stamp sm:block sm:text-[9.5px] ${tagColor}`}
           >
             Est · 1982 · Multan
           </span>
