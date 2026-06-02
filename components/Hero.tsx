@@ -2,157 +2,153 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight, Leaf, ShieldCheck, Sparkles } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
-const stats = [
-  { icon: Sparkles, label: "Since 1982" },
-  { icon: ShieldCheck, label: "Export Grade" },
-  { icon: Leaf, label: "Farm Direct" },
-];
+const EASE = [0.22, 1, 0.36, 1] as const;
 
 export default function Hero() {
-  return (
-    <section className="relative isolate overflow-hidden bg-cream-50 pt-32 md:pt-40">
-      {/* Decorative gradient + grain */}
-      <div className="absolute inset-0 -z-10 bg-radial-mango" />
-      <div className="absolute inset-0 -z-10 opacity-[0.06] [background-image:radial-gradient(circle_at_1px_1px,rgba(42,26,12,0.6)_1px,transparent_0)] [background-size:24px_24px]" />
+  const reduce = useReducedMotion();
+  const rise = (delay = 0) => ({
+    initial: { opacity: 0, y: reduce ? 0 : 28 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.9, delay, ease: EASE },
+  });
 
-      <div className="container-page grid items-center gap-14 pb-24 lg:grid-cols-12 lg:gap-12 lg:pb-32">
+  return (
+    <section className="relative isolate overflow-hidden pt-32 md:pt-40">
+      {/* top metadata bar */}
+      <div className="container-page">
+        <motion.div
+          {...rise(0)}
+          className="flex flex-wrap items-center justify-between gap-y-3 border-b border-ink/15 pb-5"
+        >
+          <p className="font-stamp text-[10.5px] font-medium uppercase tracking-stamp text-ink/60">
+            <span className="text-ink">Vol. 42</span> · Season 2026 · Multan, Punjab
+          </p>
+          <p className="font-stamp text-[10.5px] font-medium uppercase tracking-stamp text-ink/60">
+            Family-grown · Hand-graded · Farm-direct
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Hero body */}
+      <div className="container-page relative grid gap-12 pt-12 md:pt-16 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-7">
-          <motion.span
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full border border-bark/15 bg-cream-50/70 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-farm-600 backdrop-blur"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-mango-500" />
-            Hand-picked · Family farmed
-          </motion.span>
+          <motion.div {...rise(0.05)} className="section-index">
+            <span>§ 01 — The Orchard</span>
+          </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight text-bark sm:text-6xl lg:text-7xl"
+            {...rise(0.1)}
+            className="title-flex mt-6 font-display text-[clamp(2.8rem,7.2vw,7rem)] font-medium leading-[0.92] tracking-[-0.025em] text-ink"
+            style={{ fontVariationSettings: '"SOFT" 60, "opsz" 144' }}
           >
-            Premium Export Quality{" "}
-            <span className="relative whitespace-nowrap text-mango-600">
-              Mangoes
-              <svg
-                aria-hidden
-                viewBox="0 0 200 12"
-                className="absolute -bottom-2 left-0 h-3 w-full"
-              >
-                <path
-                  d="M2 8 C 50 2 150 2 198 8"
-                  fill="none"
-                  stroke="#F5A623"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>{" "}
-            From Multan
+            The mango,{" "}
+            <em className="font-display italic text-mango-600">
+              from family
+            </em>
+            <br />
+            hands.
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-7 max-w-xl text-base leading-relaxed text-bark/70 md:text-lg"
+            {...rise(0.2)}
+            className="editorial mt-8 max-w-xl"
           >
-            Generations of farming expertise. Carefully selected export-quality
-            mangoes delivered directly from our orchards to your home.
+            For four decades our orchard near Multan has been a place of slow,
+            patient work. We grow only premium export varieties — and deliver
+            them, hand-graded, straight from our trees to your home.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-9 flex flex-wrap items-center gap-4"
-          >
+          <motion.div {...rise(0.3)} className="mt-10 flex flex-wrap items-center gap-4">
             <Link href="/pre-booking" className="btn-primary">
-              Pre-Book Now <ArrowRight size={16} />
+              Pre-Book the Season <ArrowRight size={14} />
             </Link>
             <Link href="/varieties" className="btn-ghost">
-              Explore Varieties
+              View Varieties
             </Link>
           </motion.div>
 
-          <motion.ul
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4"
-          >
-            {stats.map(({ icon: Icon, label }) => (
-              <li
-                key={label}
-                className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-bark/70"
-              >
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-mango-100 text-mango-700">
-                  <Icon size={16} />
-                </span>
-                {label}
-              </li>
-            ))}
-          </motion.ul>
+          {/* Bilingual heritage stamp */}
+          <motion.div {...rise(0.4)} className="mt-12 flex items-end gap-5">
+            <span
+              className="font-urdu text-3xl text-farm-700"
+              dir="rtl"
+              lang="ur"
+            >
+              تھاہیم فروٹ فارمز
+            </span>
+            <span className="pb-1 font-stamp text-[10.5px] uppercase tracking-stamp text-ink/55">
+              Established 1982 · Ghouspur Thaheem
+            </span>
+          </motion.div>
         </div>
 
+        {/* Right column — hero image with floating editorial label */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: reduce ? 1 : 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1.1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="relative lg:col-span-5"
         >
-          <div className="relative mx-auto aspect-square w-full max-w-[520px]">
-            {/* Outer gold ring */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-mango-300 via-mango-500 to-farm-600 p-[6px] shadow-glow">
-              <div className="h-full w-full overflow-hidden rounded-full bg-cream-50">
-                <Image
-                  src="/images/hero/hero-orchard.svg"
-                  alt="Sunset over the Thaheem Fruit Farms orchard"
-                  fill
-                  priority
-                  sizes="(min-width:1024px) 40vw, 90vw"
-                  className="object-cover"
-                />
+          <div className="relative">
+            {/* Top stamp band */}
+            <div className="mb-3 flex items-center justify-between">
+              <span className="font-stamp text-[10px] uppercase tracking-stamp text-ink/55">
+                № 01 / 05
+              </span>
+              <span className="font-stamp text-[10px] uppercase tracking-stamp text-ink/55">
+                Export Grade
+              </span>
+            </div>
+
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[6px] ring-1 ring-ink/15 shadow-ink">
+              <Image
+                src="/images/hero/hero-orchard.svg"
+                alt="Sunset over the Thaheem Fruit Farms orchard"
+                fill
+                priority
+                sizes="(min-width:1024px) 40vw, 90vw"
+                className="object-cover"
+              />
+              {/* paper grain inside frame */}
+              <div className="pointer-events-none absolute inset-0 mix-blend-multiply opacity-25 grain-frame" />
+              {/* Vintage caption strip */}
+              <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between border-t border-ink/10 bg-cream-50/85 px-4 py-2.5 backdrop-blur-sm">
+                <span className="font-stamp text-[9.5px] uppercase tracking-stamp text-ink/70">
+                  Plate I — Orchard at golden hour
+                </span>
+                <span className="font-stamp text-[9.5px] uppercase tracking-stamp text-ink/55">
+                  May ’26
+                </span>
               </div>
             </div>
 
-            {/* Floating logo badge */}
+            {/* Floating wax-seal logo */}
             <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-6 -left-6 hidden h-32 w-32 overflow-hidden rounded-full ring-4 ring-cream-50 shadow-soft md:block"
+              animate={reduce ? {} : { rotate: [-6, 6, -6] }}
+              transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-10 -left-10 hidden h-32 w-32 overflow-hidden rounded-full ring-4 ring-paper shadow-seal md:block"
             >
               <Image
                 src="/images/logo/logo.jpeg"
-                alt="Thaheem Fruit Farms logo"
+                alt="Thaheem Fruit Farms seal"
                 fill
                 sizes="128px"
                 className="object-cover"
               />
             </motion.div>
 
-            {/* Floating quality badge */}
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -right-4 top-8 hidden rounded-2xl bg-cream-50 px-4 py-3 shadow-soft md:block"
-            >
-              <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-farm-600">
-                Export Quality
-              </p>
-              <p className="mt-0.5 font-display text-xl text-bark">100%</p>
-            </motion.div>
+            {/* Side typographic block */}
+            <div className="absolute -right-3 top-12 hidden rotate-90 origin-top-right md:block">
+              <span className="font-stamp text-[10px] uppercase tracking-stamp text-ink/45">
+                Punjab · Pakistan · Since 1982
+              </span>
+            </div>
           </div>
         </motion.div>
       </div>
-
-      {/* bottom curve */}
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-b from-transparent to-cream-100/60" />
     </section>
   );
 }

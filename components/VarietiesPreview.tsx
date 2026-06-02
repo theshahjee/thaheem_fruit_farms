@@ -10,22 +10,23 @@ export default function VarietiesPreview() {
     <section className="section" id="varieties">
       <div className="container-page">
         <SectionHeading
-          eyebrow="Our Mangoes"
-          title="A select collection of export-grade varieties"
-          description="Five exceptional cultivars — each grown, hand-selected and packed to export standards. We focus only on the varieties our family knows best."
+          index="02"
+          eyebrow="The Varietals"
+          title="Five cultivars. One uncompromising standard."
+          description="We grow only the varieties our family has spent decades learning — and box only the fruit our family would eat themselves."
         />
 
         <div className="mt-16 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {varieties.map((v, i) => (
-            <Reveal key={v.slug} delay={i * 0.08}>
-              <VarietyCard variety={v} />
+            <Reveal key={v.slug} delay={i * 0.06}>
+              <VarietyCard variety={v} index={i} />
             </Reveal>
           ))}
         </div>
 
-        <div className="mt-14 text-center">
+        <div className="mt-14 flex justify-center">
           <Link href="/varieties" className="btn-ghost">
-            View All Varieties <ArrowRight size={16} />
+            See the full varietal index <ArrowRight size={14} />
           </Link>
         </div>
       </div>

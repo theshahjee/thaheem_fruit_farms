@@ -5,8 +5,13 @@
 :root {
   --color-mango: #f5a623;
   --color-farm: #3d7a2a;
+  --color-paper: #f5ebd0;
   --color-cream: #fbf5e6;
   --color-bark: #2a1a0c;
+  --color-ink: #1a1208;
+
+  --paper-noise:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.42  0 0 0 0 0.28  0 0 0 0 0.08  0 0 0 0.14 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
 html {
@@ -14,67 +19,187 @@ html {
 }
 
 body {
-  background-color: var(--color-cream);
-  color: var(--color-bark);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "ss02";
 }
 
 ::selection {
   background-color: rgba(245, 166, 35, 0.35);
-  color: #2a1a0c;
+  color: #1a1208;
+}
+
+/* Paper background — soft warm gradient + tiny grain overlay */
+.paper-bg {
+  position: relative;
+  background:
+    radial-gradient(ellipse at top, rgba(245, 166, 35, 0.10), transparent 55%),
+    radial-gradient(ellipse at bottom right, rgba(61, 122, 42, 0.06), transparent 60%),
+    var(--color-paper);
+}
+.paper-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: var(--paper-noise);
+  opacity: 0.55;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+.paper-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Heritage hairline used as section divider */
+.hairline {
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgba(26, 18, 8, 0.35),
+    transparent
+  );
 }
 
 @layer components {
   .container-page {
-    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+    @apply mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-12;
   }
 
+  .container-tight {
+    @apply mx-auto w-full max-w-4xl px-5 sm:px-8;
+  }
+
+  /* Buttons — letterpress vibe */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-mango-500 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-bark shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-mango-600 hover:text-cream-50 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-mango-500/40;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink px-7 py-3.5 text-[11px] font-medium uppercase tracking-stamp text-cream-50 transition-all duration-300 hover:-translate-y-0.5 hover:bg-bark hover:shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-mango-500/40;
+    font-family: var(--font-stamp);
+  }
+
+  .btn-mango {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-mango-500 px-7 py-3.5 text-[11px] font-medium uppercase tracking-stamp text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-mango-400 hover:shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-ink/30;
+    font-family: var(--font-stamp);
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-bark/15 bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-wider text-bark transition-all duration-300 hover:-translate-y-0.5 hover:border-bark/40 hover:bg-cream-100;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/25 bg-transparent px-7 py-3.5 text-[11px] font-medium uppercase tracking-stamp text-ink transition-all duration-300 hover:-translate-y-0.5 hover:border-ink/60 hover:bg-paper-100;
+    font-family: var(--font-stamp);
   }
 
-  .btn-dark {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-farm-500 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-cream-50 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-farm-600 focus:outline-none focus:ring-2 focus:ring-farm-500/40;
+  /* Crate-stamp small caps used for eyebrows, dates, location */
+  .stamp {
+    font-family: var(--font-stamp);
+    @apply text-[10.5px] font-medium uppercase tracking-stamp text-ink/70;
+  }
+
+  .stamp-lg {
+    font-family: var(--font-stamp);
+    @apply text-xs font-medium uppercase tracking-stamp text-ink/80;
+  }
+
+  /* Display headlines */
+  .h-display {
+    font-family: var(--font-display);
+    font-variation-settings: "SOFT" 60, "opsz" 80;
+    @apply text-[clamp(2.4rem,5.5vw,5rem)] leading-[0.98] tracking-[-0.02em] text-ink;
+  }
+
+  .h-display-sm {
+    font-family: var(--font-display);
+    font-variation-settings: "SOFT" 60, "opsz" 36;
+    @apply text-[clamp(1.7rem,3.2vw,2.6rem)] leading-[1.05] tracking-[-0.015em] text-ink;
+  }
+
+  .editorial {
+    font-family: var(--font-editorial);
+    @apply text-[17px] leading-[1.65] text-ink/80;
   }
 
   .eyebrow {
-    @apply inline-block text-xs font-semibold uppercase tracking-[0.28em] text-farm-600;
+    font-family: var(--font-stamp);
+    @apply text-[10.5px] font-medium uppercase tracking-stamp text-mango-700;
   }
 
-  .h-display {
-    @apply font-display text-4xl leading-tight tracking-tight text-bark md:text-5xl lg:text-6xl;
+  .field-label {
+    @apply mb-2 block text-[10.5px] font-medium uppercase tracking-stamp text-ink/70;
+    font-family: var(--font-stamp);
   }
 
-  .card-glass {
-    @apply rounded-3xl border border-bark/10 bg-cream-50/80 p-8 shadow-soft backdrop-blur-sm;
+  .field-input {
+    @apply w-full rounded-2xl border border-ink/15 bg-paper-50 px-5 py-3.5 text-ink placeholder:text-ink/35 transition focus:border-ink/40 focus:outline-none focus:ring-2 focus:ring-mango-500/25;
   }
 
   .section {
     @apply py-20 md:py-28;
   }
 
-  .field-label {
-    @apply mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-bark/70;
+  /* Numbered section index */
+  .section-index {
+    font-family: var(--font-stamp);
+    @apply flex items-center gap-3 text-[10.5px] font-medium uppercase tracking-stamp text-ink/55;
   }
-
-  .field-input {
-    @apply w-full rounded-2xl border border-bark/15 bg-cream-50 px-5 py-3.5 text-bark placeholder:text-bark/40 transition focus:border-mango-500 focus:outline-none focus:ring-2 focus:ring-mango-500/25;
+  .section-index::before {
+    content: "";
+    @apply h-px w-10 bg-ink/30;
   }
 }
 
-/* Subtle decorative grain overlay helper */
-.grain::before {
+/* Decorative ornament rule used between sections */
+.ornament-rule {
+  position: relative;
+  height: 22px;
+}
+.ornament-rule::before,
+.ornament-rule::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.6  0 0 0 0 0.45  0 0 0 0 0.15  0 0 0 0.12 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  opacity: 0.5;
-  pointer-events: none;
-  mix-blend-mode: multiply;
+  top: 50%;
+  width: 38%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(26, 18, 8, 0.3),
+    transparent
+  );
+}
+.ornament-rule::before {
+  left: 0;
+}
+.ornament-rule::after {
+  right: 0;
+}
+
+/* Marquee */
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 38s linear infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Reusable grain overlays — set via class to avoid inline data-URIs in JSX */
+.grain-frame {
+  background-image: var(--paper-noise);
+}
+.grain-cream {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 0.95  0 0 0 0 0.78  0 0 0 0.20 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* Variable-font hover for display headlines */
+.title-flex {
+  transition: font-variation-settings 0.6s ease;
+}
+.title-flex:hover {
+  font-variation-settings: "SOFT" 100, "opsz" 144;
 }

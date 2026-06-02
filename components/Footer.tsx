@@ -5,25 +5,49 @@ import { brand, nav } from "@/lib/brand";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-farm-700 text-cream-100">
-      <div className="absolute inset-0 bg-radial-mango opacity-30" />
-      <div className="container-page relative grid gap-12 py-20 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="relative bg-farm-800 text-cream-100">
+      {/* grain */}
+      <div className="pointer-events-none absolute inset-0 opacity-25 mix-blend-overlay grain-cream" />
+
+      {/* Big editorial wordmark */}
+      <div className="relative container-page pt-20">
+        <p className="font-stamp text-[10.5px] uppercase tracking-stamp text-cream-100/60">
+          Est · 1982 · Multan · Pakistan
+        </p>
+        <h3
+          className="mt-3 font-display text-[clamp(3rem,9vw,9rem)] font-medium leading-[0.92] tracking-[-0.03em] text-cream-50"
+          style={{ fontVariationSettings: '"SOFT" 60, "opsz" 144' }}
+        >
+          Thaheem.
+        </h3>
+        <p
+          className="mt-2 font-urdu text-3xl text-mango-300"
+          dir="rtl"
+          lang="ur"
+        >
+          تھاہیم فروٹ فارمز
+        </p>
+      </div>
+
+      <div className="relative container-page mt-16 grid gap-12 pb-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo size={56} variant="light" />
-          <p className="mt-6 max-w-xs text-sm leading-relaxed text-cream-100/80">
-            Premium Export Quality Mangoes Since 1982. Family-grown near Multan,
+          <Logo size={52} variant="light" />
+          <p className="mt-6 max-w-xs font-editorial text-sm leading-relaxed text-cream-100/75">
+            Premium export quality mangoes since 1982. Family-grown near Multan,
             packed with care, delivered direct from our orchards.
           </p>
         </div>
 
         <div>
-          <h4 className="font-display text-xl text-cream-50">Explore</h4>
-          <ul className="mt-5 space-y-2.5 text-sm">
+          <h4 className="font-stamp text-[10.5px] uppercase tracking-stamp text-cream-100/60">
+            Explore
+          </h4>
+          <ul className="mt-5 space-y-2.5">
             {nav.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-cream-100/75 transition hover:text-mango-300"
+                  className="font-editorial text-[15px] text-cream-100/85 transition hover:text-mango-300"
                 >
                   {item.label}
                 </Link>
@@ -33,22 +57,26 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="font-display text-xl text-cream-50">Visit Us</h4>
-          <p className="mt-5 flex items-start gap-3 text-sm text-cream-100/80">
-            <MapPin size={18} className="mt-0.5 shrink-0 text-mango-300" />
+          <h4 className="font-stamp text-[10.5px] uppercase tracking-stamp text-cream-100/60">
+            Visit Us
+          </h4>
+          <p className="mt-5 flex items-start gap-3 font-editorial text-[15px] leading-relaxed text-cream-100/85">
+            <MapPin size={16} className="mt-1 shrink-0 text-mango-300" />
             <span>{brand.address}</span>
           </p>
         </div>
 
         <div>
-          <h4 className="font-display text-xl text-cream-50">Contact</h4>
-          <ul className="mt-5 space-y-3 text-sm">
+          <h4 className="font-stamp text-[10.5px] uppercase tracking-stamp text-cream-100/60">
+            Contact
+          </h4>
+          <ul className="mt-5 space-y-3 font-editorial text-[15px]">
             <li>
               <a
                 href={`tel:${brand.phone}`}
                 className="flex items-center gap-3 text-cream-100/85 transition hover:text-mango-300"
               >
-                <Phone size={16} className="text-mango-300" /> {brand.phone}
+                <Phone size={15} className="text-mango-300" /> {brand.phone}
               </a>
             </li>
             <li>
@@ -56,7 +84,7 @@ export default function Footer() {
                 href={`mailto:${brand.email}`}
                 className="flex items-center gap-3 text-cream-100/85 transition hover:text-mango-300"
               >
-                <Mail size={16} className="text-mango-300" /> {brand.email}
+                <Mail size={15} className="text-mango-300" /> {brand.email}
               </a>
             </li>
             <li>
@@ -66,7 +94,7 @@ export default function Footer() {
                 rel="noreferrer noopener"
                 className="flex items-center gap-3 text-cream-100/85 transition hover:text-mango-300"
               >
-                <Instagram size={16} className="text-mango-300" /> @
+                <Instagram size={15} className="text-mango-300" /> @
                 {brand.instagram}
               </a>
             </li>
@@ -74,12 +102,12 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative border-t border-cream-100/10">
-        <div className="container-page flex flex-col items-center justify-between gap-4 py-6 text-xs text-cream-100/60 md:flex-row">
+      <div className="relative border-t border-cream-100/15">
+        <div className="container-page flex flex-col items-center justify-between gap-4 py-6 font-stamp text-[10.5px] uppercase tracking-stamp text-cream-100/55 md:flex-row">
           <p>
-            © {new Date().getFullYear()} {brand.name}. All rights reserved.
+            © {new Date().getFullYear()} {brand.name} · All rights reserved
           </p>
-          <p>Crafted with care. Grown with heritage.</p>
+          <p>Crafted with care · Grown with heritage</p>
         </div>
       </div>
     </footer>

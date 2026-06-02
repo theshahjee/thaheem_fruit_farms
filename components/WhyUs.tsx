@@ -1,86 +1,81 @@
-import {
-  Award,
-  BadgeCheck,
-  Box,
-  Globe2,
-  Heart,
-  Leaf,
-  ShieldCheck,
-  Sun,
-} from "lucide-react";
 import Reveal from "./Reveal";
-import SectionHeading from "./SectionHeading";
 
-const reasons = [
+const principles = [
   {
-    icon: Award,
-    title: "Export Quality Varieties Only",
-    body: "We grow and select exclusively premium export-grade mango varieties — nothing else makes it into our boxes.",
+    title: "Export-grade only",
+    body: "We grow and select exclusively premium export cultivars. Nothing else makes it into a Thaheem box — full stop.",
   },
   {
-    icon: ShieldCheck,
-    title: "Human-Safe Crop Protection",
-    body: "Responsible, human-safe farming practices protect our trees, our soil and your family.",
+    title: "Human-safe protection",
+    body: "Responsible crop protection that is safe for our farm workers, for our family, and for yours.",
   },
   {
-    icon: BadgeCheck,
-    title: "Export Standards End-to-End",
-    body: "From harvesting and ripening to grading and packing — every step follows strict export protocols.",
+    title: "End-to-end export standards",
+    body: "From harvest and ripening to grading and packing, every step follows protocols designed for international export.",
   },
   {
-    icon: Box,
-    title: "Premium Packaging",
-    body: "Each box is purpose-built for our mangoes — ventilated, branded and tested for safe transit.",
+    title: "Purpose-built packaging",
+    body: "Ventilated, branded, transit-tested boxes built for our mangoes — never repurposed produce trays.",
   },
   {
-    icon: Sun,
-    title: "Farm Direct Freshness",
-    body: "No middlemen. No cold storage chains. Mangoes leave our orchard and reach your doorstep.",
+    title: "No middlemen",
+    body: "We leave the orchard, we pack the box, we ship it. No commission agents, no cold storage chains.",
   },
   {
-    icon: Heart,
-    title: "Open Farm Visits",
-    body: "We invite you to see our standards yourself. Walk the orchard, see the packing, taste the quality.",
-  },
-  {
-    icon: Globe2,
-    title: "3+ Years Serving Online Customers",
-    body: "What was once a wholesale-only farm now delivers directly to homes across Pakistan.",
-  },
-  {
-    icon: Leaf,
-    title: "Heritage Since 1982",
-    body: "Four decades of family knowledge and care behind every mango we send.",
+    title: "Open farm",
+    body: "Walk the orchard with us. See the standards. Quality should be experienced, not just promised.",
   },
 ];
 
 export default function WhyUs() {
   return (
     <section className="section relative overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-bark/10 to-transparent" />
-      <div className="container-page">
-        <SectionHeading
-          eyebrow="Why Choose Us"
-          title="Why Thaheem Fruit Farms?"
-          description="Quality begins at the roots. It continues through every stage of cultivation, selection, packaging and delivery — and is sealed by the family standing behind it."
-        />
+      <div className="container-page grid gap-16 lg:grid-cols-12">
+        <Reveal className="lg:col-span-4">
+          <div className="section-index">
+            <span>§ 04 — The Standard</span>
+          </div>
+          <h2
+            className="h-display mt-6 font-medium"
+            style={{ fontVariationSettings: '"SOFT" 60, "opsz" 96' }}
+          >
+            Why
+            <br />
+            <em className="font-display italic text-mango-600">Thaheem</em>?
+          </h2>
+          <p className="editorial mt-6 max-w-md">
+            Quality begins at the roots. It continues through every stage of
+            cultivation, selection, packaging and delivery — and is sealed by
+            the family standing behind it.
+          </p>
+        </Reveal>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {reasons.map((r, i) => (
-            <Reveal key={r.title} delay={i * 0.06}>
-              <article className="group h-full rounded-3xl border border-bark/10 bg-cream-50 p-7 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:border-mango-300 hover:shadow-glow">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-mango-100 text-mango-700 transition-colors duration-500 group-hover:bg-mango-500 group-hover:text-cream-50">
-                  <r.icon size={22} />
-                </span>
-                <h3 className="mt-5 font-display text-xl font-semibold text-bark">
-                  {r.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-bark/70">
-                  {r.body}
-                </p>
-              </article>
-            </Reveal>
-          ))}
+        <div className="lg:col-span-8">
+          <ol className="divide-y divide-ink/15 border-y border-ink/15">
+            {principles.map((p, i) => (
+              <Reveal key={p.title} delay={i * 0.04}>
+                <li className="grid grid-cols-[60px_1fr] gap-6 py-7 md:grid-cols-[80px_1fr] md:gap-10 md:py-9">
+                  <span
+                    className="font-display text-3xl font-medium text-ink/30 md:text-4xl"
+                    style={{ fontVariationSettings: '"SOFT" 60, "opsz" 60' }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3
+                      className="font-display text-2xl font-medium leading-tight text-ink md:text-[28px]"
+                      style={{ fontVariationSettings: '"SOFT" 60, "opsz" 36' }}
+                    >
+                      {p.title}
+                    </h3>
+                    <p className="editorial mt-2 max-w-xl text-[15.5px]">
+                      {p.body}
+                    </p>
+                  </div>
+                </li>
+              </Reveal>
+            ))}
+          </ol>
         </div>
       </div>
     </section>

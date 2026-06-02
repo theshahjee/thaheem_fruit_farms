@@ -29,12 +29,12 @@ export default function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-cream-50/90 shadow-soft backdrop-blur-md"
+          ? "border-b border-ink/10 bg-paper/85 backdrop-blur-md"
           : "bg-transparent"
       )}
     >
-      <div className="container-page flex h-20 items-center justify-between">
-        <Logo size={48} />
+      <div className="container-page flex h-[76px] items-center justify-between">
+        <Logo size={44} />
 
         <nav className="hidden items-center gap-1 lg:flex">
           {nav.map((item) => {
@@ -47,15 +47,15 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "relative rounded-full px-4 py-2 text-sm font-medium transition-all duration-300",
+                  "relative rounded-full px-4 py-2 font-stamp text-[10.5px] font-medium uppercase tracking-stamp transition-colors duration-300",
                   active
-                    ? "text-bark"
-                    : "text-bark/70 hover:text-bark"
+                    ? "text-ink"
+                    : "text-ink/55 hover:text-ink"
                 )}
               >
                 {item.label}
                 {active && (
-                  <span className="absolute inset-x-4 -bottom-0.5 h-0.5 rounded-full bg-mango-500" />
+                  <span className="absolute inset-x-5 -bottom-0.5 h-px bg-ink" />
                 )}
               </Link>
             );
@@ -63,25 +63,24 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden lg:flex">
-          <Link href="/pre-booking" className="btn-primary text-xs">
+          <Link href="/pre-booking" className="btn-mango">
             Pre-Book Now
           </Link>
         </div>
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-bark/15 bg-cream-50 text-bark"
+          className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 bg-paper-50 text-ink"
           aria-label="Toggle menu"
           aria-expanded={open}
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={18} /> : <Menu size={18} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       <div
         className={cn(
-          "lg:hidden overflow-hidden border-t border-bark/10 bg-cream-50/95 backdrop-blur-md transition-[max-height,opacity] duration-500",
+          "lg:hidden overflow-hidden border-t border-ink/10 bg-paper/95 backdrop-blur-md transition-[max-height,opacity] duration-500",
           open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
         )}
       >
@@ -96,17 +95,17 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-2xl px-4 py-3 text-base font-medium",
+                  "rounded-2xl px-4 py-3 font-stamp text-[11px] font-medium uppercase tracking-stamp",
                   active
-                    ? "bg-mango-100 text-bark"
-                    : "text-bark/80 hover:bg-cream-100"
+                    ? "bg-mango-100 text-ink"
+                    : "text-ink/75 hover:bg-paper-100"
                 )}
               >
                 {item.label}
               </Link>
             );
           })}
-          <Link href="/pre-booking" className="btn-primary mt-3">
+          <Link href="/pre-booking" className="btn-mango mt-3">
             Pre-Book Now
           </Link>
         </nav>

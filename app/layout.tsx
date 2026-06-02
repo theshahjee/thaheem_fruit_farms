@@ -1,21 +1,43 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Fraunces, Manrope, Newsreader, DM_Mono, Noto_Nastaliq_Urdu } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { brand } from "@/lib/brand";
 
-const display = Cormorant_Garamond({
+const display = Fraunces({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  axes: ["SOFT", "opsz"],
+  style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
 });
 
-const sans = Inter({
+const editorial = Newsreader({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-editorial",
+  display: "swap",
+});
+
+const sans = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+const stamp = DM_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-stamp",
+  display: "swap",
+});
+
+const urdu = Noto_Nastaliq_Urdu({
+  subsets: ["arabic"],
+  weight: ["500", "700"],
+  variable: "--font-urdu",
   display: "swap",
 });
 
@@ -43,9 +65,7 @@ export const metadata: Metadata = {
       "Premium export-quality mangoes delivered directly from our orchards near Multan.",
     type: "website",
   },
-  icons: {
-    icon: "/favicon.svg",
-  },
+  icons: { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({
@@ -54,8 +74,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable}`}>
-      <body>
+    <html
+      lang="en"
+      className={`${display.variable} ${editorial.variable} ${sans.variable} ${stamp.variable} ${urdu.variable}`}
+    >
+      <body className="paper-bg">
         <Navbar />
         <main>{children}</main>
         <Footer />

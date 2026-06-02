@@ -9,20 +9,20 @@ type Props = {
 };
 
 export default function Logo({
-  size = 56,
+  size = 48,
   withText = true,
   variant = "dark",
 }: Props) {
-  const textColor = variant === "light" ? "text-cream-50" : "text-bark";
-  const tagColor = variant === "light" ? "text-cream-100/80" : "text-farm-600";
+  const textColor = variant === "light" ? "text-cream-50" : "text-ink";
+  const tagColor = variant === "light" ? "text-cream-100/70" : "text-ink/55";
   return (
     <Link
       href="/"
-      className="group flex items-center gap-3"
+      className="group flex items-center gap-3.5"
       aria-label={`${brand.name} — Home`}
     >
       <span
-        className="relative overflow-hidden rounded-full ring-1 ring-bark/10 shadow-soft transition-transform duration-500 group-hover:rotate-6"
+        className="relative overflow-hidden rounded-full ring-1 ring-ink/15 shadow-seal transition-transform duration-500 group-hover:rotate-[8deg]"
         style={{ width: size, height: size }}
       >
         <Image
@@ -37,14 +37,15 @@ export default function Logo({
       {withText && (
         <span className="leading-tight">
           <span
-            className={`block font-display text-lg font-semibold tracking-wide ${textColor}`}
+            className={`block font-display text-[19px] font-semibold tracking-[-0.01em] ${textColor}`}
+            style={{ fontVariationSettings: '"SOFT" 60, "opsz" 24' }}
           >
             Thaheem Fruit Farms
           </span>
           <span
-            className={`block text-[10px] font-semibold uppercase tracking-[0.3em] ${tagColor}`}
+            className={`mt-0.5 block font-stamp text-[9.5px] font-medium uppercase tracking-stamp ${tagColor}`}
           >
-            Since 1982 · Multan
+            Est · 1982 · Multan
           </span>
         </span>
       )}

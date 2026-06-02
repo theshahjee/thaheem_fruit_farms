@@ -41,44 +41,58 @@ const config: Config = {
           400: "#C7A445",
           500: "#B58E2C",
         },
+        paper: {
+          DEFAULT: "#F5EBD0",
+          50: "#FDF8E8",
+          100: "#F8EFD7",
+          200: "#F2E4BD",
+          300: "#E6D49A",
+        },
         cream: {
           DEFAULT: "#FBF5E6",
           50: "#FFFCF4",
           100: "#FBF5E6",
           200: "#F5EBCD",
         },
-        gold: {
-          DEFAULT: "#C9A227",
-          soft: "#E0BF55",
-        },
-        bark: "#2A1A0C", // deep brown used in logo border
+        gold: { DEFAULT: "#C9A227", soft: "#E0BF55" },
+        bark: "#2A1A0C",
+        ink: "#1A1208",
+        punch: "#C2410C", // rare hot accent
       },
       fontFamily: {
-        display: ["var(--font-display)", "serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
+        editorial: ["var(--font-editorial)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        stamp: ["var(--font-stamp)", "ui-monospace", "monospace"],
+        urdu: ["var(--font-urdu)", "serif"],
       },
-      backgroundImage: {
-        "grain": "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.45 0 0 0 0 0.15 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-        "radial-mango":
-          "radial-gradient(ellipse at top, rgba(245,166,35,0.18), transparent 60%)",
+      letterSpacing: {
+        stamp: "0.32em",
+        wide2: "0.18em",
       },
       boxShadow: {
         soft: "0 10px 40px -10px rgba(42, 26, 12, 0.18)",
-        glow: "0 0 0 1px rgba(245,166,35,0.2), 0 20px 50px -20px rgba(245,166,35,0.45)",
+        ink: "0 1px 0 rgba(42,26,12,0.08), 0 30px 60px -30px rgba(42,26,12,0.35)",
+        seal: "inset 0 0 0 1px rgba(42,26,12,0.18), 0 18px 40px -18px rgba(42,26,12,0.4)",
       },
       keyframes: {
-        "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
         },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-8px)" },
+        sealspin: {
+          "0%, 100%": { transform: "rotate(-6deg)" },
+          "50%": { transform: "rotate(6deg)" },
+        },
+        riseIn: {
+          "0%": { opacity: "0", transform: "translateY(28px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
-        "fade-up": "fade-up 0.8s ease-out forwards",
-        float: "float 6s ease-in-out infinite",
+        marquee: "marquee 38s linear infinite",
+        sealspin: "sealspin 22s ease-in-out infinite",
+        "rise-in": "riseIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards",
       },
     },
   },
