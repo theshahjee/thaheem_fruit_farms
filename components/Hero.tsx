@@ -24,10 +24,10 @@ export default function Hero() {
           {...rise(0)}
           className="flex flex-wrap items-center justify-between gap-y-3 border-b border-ink/15 pb-5"
         >
-          <p className="font-stamp text-[10.5px] font-medium uppercase tracking-stamp text-ink/60">
-            <span className="text-ink">Vol. 42</span> · Season 2026 · Multan, Punjab
+          <p className="font-stamp text-[9.5px] font-medium uppercase tracking-stamp text-ink/60 sm:text-[10.5px]">
+            <span className="text-ink">Vol. 42</span> · Season 2026 · Multan
           </p>
-          <p className="font-stamp text-[10.5px] font-medium uppercase tracking-stamp text-ink/60">
+          <p className="hidden font-stamp text-[10.5px] font-medium uppercase tracking-stamp text-ink/60 sm:block">
             Family-grown · Hand-graded · Farm-direct
           </p>
         </motion.div>
@@ -145,12 +145,6 @@ export default function Hero() {
               />
             </motion.div>
 
-            {/* Side typographic block */}
-            <div className="absolute -right-3 top-12 hidden rotate-90 origin-top-right md:block">
-              <span className="font-stamp text-[10px] uppercase tracking-stamp text-ink/45">
-                Punjab · Pakistan · Since 1982
-              </span>
-            </div>
           </div>
         </motion.div>
       </div>
