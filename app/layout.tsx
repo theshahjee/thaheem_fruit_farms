@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SideRail from "@/components/SideRail";
+import PromoPopup from "@/components/PromoPopup";
 import { brand } from "@/lib/brand";
 
 const display = Fraunces({
@@ -78,6 +79,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <PromoPopup />
       </body>
     </html>
   );
