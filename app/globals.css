@@ -41,6 +41,7 @@ body {
 /* Paper background — soft warm gradient + tiny grain overlay */
 .paper-bg {
   position: relative;
+  isolation: isolate;
   background:
     radial-gradient(ellipse at top, rgba(245, 166, 35, 0.10), transparent 55%),
     radial-gradient(ellipse at bottom right, rgba(61, 122, 42, 0.06), transparent 60%),
@@ -54,11 +55,7 @@ body {
   opacity: 0.55;
   mix-blend-mode: multiply;
   pointer-events: none;
-  z-index: 0;
-}
-.paper-bg > * {
-  position: relative;
-  z-index: 1;
+  z-index: -1;
 }
 
 /* Heritage hairline used as section divider */
