@@ -19,7 +19,7 @@ export default function StoryPreview() {
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[6px] ring-1 ring-ink/15 shadow-ink">
               <Image
-                src={imgPath("/images/farm/orchard-rows.svg")}
+                src={imgPath("/images/farm/orchard-golden-hour.jpg")}
                 alt="Rows of mango trees at Thaheem Fruit Farms"
                 fill
                 sizes="(min-width:1024px) 40vw, 90vw"

@@ -37,7 +37,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-[2.5rem] border border-bark/10 bg-cream-50 p-8 shadow-soft md:p-10"
+      className="w-full max-w-full rounded-[2.5rem] border border-bark/10 bg-cream-50 p-6 shadow-soft sm:p-8 md:p-10"
     >
       <div className="grid gap-5 md:grid-cols-2">
         <div>

@@ -54,7 +54,7 @@ export default function FarmVisitPage() {
           <Reveal>
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] ring-1 ring-bark/10 shadow-soft">
               <Image
-                src={imgPath("/images/farm/orchard-rows.svg")}
+                src={imgPath("/images/farm/orchard-golden-hour.jpg")}
                 alt="Thaheem orchard"
                 fill
                 sizes="(min-width:1024px) 40vw, 90vw"

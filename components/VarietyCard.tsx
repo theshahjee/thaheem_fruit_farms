@@ -7,14 +7,6 @@ import { ArrowUpRight } from "lucide-react";
 import type { Variety } from "@/lib/varieties";
 import { imgPath } from "@/lib/imgPath";
 
-const slugToImage: Record<string, string> = {
-  "export-royal-sindhri": "/images/varieties/sindhri.svg",
-  "aseel-anwar-ratool": "/images/varieties/anwar-ratool.svg",
-  "royal-chaunsa-export": "/images/varieties/royal-chaunsa.svg",
-  "white-chaunsa-export": "/images/varieties/white-chaunsa.svg",
-  "12-no-ratool": "/images/varieties/12-no-ratool.svg",
-};
-
 const accentBg: Record<Variety["accent"], string> = {
   mango: "from-mango-100/80 via-mango-50 to-paper-100",
   khaki: "from-khaki-100/80 via-khaki-50 to-paper-100",
@@ -24,8 +16,7 @@ const accentBg: Record<Variety["accent"], string> = {
 type Props = { variety: Variety; index?: number };
 
 export default function VarietyCard({ variety, index = 0 }: Props) {
-  const img =
-    slugToImage[variety.slug] ?? "/images/varieties/mango-illustration.svg";
+  const img = `/images/varieties/photos/${variety.slug}.jpg`;
   const number = String(index + 1).padStart(2, "0");
 
   return (
@@ -44,9 +35,9 @@ export default function VarietyCard({ variety, index = 0 }: Props) {
         </span>
       </div>
 
-      {/* Painterly mango stage */}
+      {/* Mango stage — real photo or painterly illustration */}
       <div
-        className={`relative aspect-[5/4] w-full bg-gradient-to-br ${
+        className={`relative aspect-[5/4] w-full overflow-hidden bg-gradient-to-br ${
           accentBg[variety.accent]
         }`}
       >
@@ -55,8 +46,10 @@ export default function VarietyCard({ variety, index = 0 }: Props) {
           alt={variety.name}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          className="object-contain p-7 transition-transform duration-700 group-hover:scale-[1.04] group-hover:rotate-[-2deg]"
+          className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
         />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/25 via-transparent to-transparent" />
+
         {/* hand-stamped seal */}
         <div className="absolute right-4 top-4 flex h-14 w-14 items-center justify-center rounded-full border border-ink/25 bg-paper/80 text-[8.5px] font-medium uppercase tracking-stamp text-ink/70 backdrop-blur-sm font-stamp">
           <div className="text-center leading-tight">

@@ -61,22 +61,24 @@ export default function ContactPage() {
         description="Pre-orders, farm visits, bulk enquiries or just a hello — pick the channel you prefer."
       />
 
-      <section className="section">
+      <section className="section overflow-hidden">
         <div className="container-page grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Reveal>
               <ul className="space-y-4">
                 {items.map((it) => {
                   const Inner = (
-                    <article className="group flex items-start gap-5 rounded-3xl border border-bark/10 bg-cream-50 p-6 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-mango-300">
-                      <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-mango-100 text-mango-700">
+                    <article className="group flex items-start gap-4 rounded-3xl border border-bark/10 bg-cream-50 p-5 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-mango-300 sm:gap-5 sm:p-6">
+                      <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-mango-100 text-mango-700 sm:h-12 sm:w-12">
                         <it.icon size={20} />
                       </span>
-                      <div>
+                      <div className="min-w-0 flex-1">
                         <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-farm-600">
                           {it.title}
                         </h3>
-                        <p className="mt-1 text-base text-bark">{it.body}</p>
+                        <p className="mt-1 break-words text-[15px] text-bark sm:text-base">
+                          {it.body}
+                        </p>
                       </div>
                     </article>
                   );
