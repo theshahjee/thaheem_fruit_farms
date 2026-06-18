@@ -22,7 +22,7 @@ export function generateMetadata({ params }: Params) {
   const title = `${v.name} — Premium Export-Quality ${v.shortName} Mangoes`;
   const description = `${v.description} Hand-graded at Thaheem Fruit Farms near Multan and pre-bookable for ${v.season}.`;
   const url = `https://thaheemfruitfarms.com/varieties/${v.slug}/`;
-  const img = `/images/varieties/photos/${v.slug}.jpg`;
+  const og = `/og/varieties/${v.slug}.jpg`;
   return {
     title,
     description,
@@ -33,13 +33,20 @@ export function generateMetadata({ params }: Params) {
       description,
       url,
       type: "article",
-      images: [{ url: img, alt: `${v.name} mango from Thaheem Fruit Farms` }],
+      images: [
+        {
+          url: og,
+          width: 1200,
+          height: 630,
+          alt: `${v.name} mango from Thaheem Fruit Farms`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [img],
+      images: [og],
     },
   };
 }
