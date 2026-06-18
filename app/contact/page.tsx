@@ -11,9 +11,17 @@ import ContactForm from "@/components/ContactForm";
 import { brand } from "@/lib/brand";
 
 export const metadata = {
-  title: "Contact Us",
+  title: "Contact Us — Thaheem Fruit Farms, Multan",
   description:
-    "Get in touch with Thaheem Fruit Farms — phone, WhatsApp, email, Instagram and farm location near Multan, Pakistan.",
+    "Get in touch with Thaheem Fruit Farms — call, WhatsApp, email, Instagram, or visit our orchard in Ghouspur Thaheem near Multan, Pakistan. We answer fast.",
+  alternates: { canonical: "/contact/" },
+  openGraph: {
+    title: "Contact Thaheem Fruit Farms",
+    description:
+      "Phone, WhatsApp, email and farm address. Pre-orders, farm visits and bulk enquiries welcome.",
+    url: "https://thaheemfruitfarms.com/contact/",
+    type: "website",
+  },
 };
 
 const items = [

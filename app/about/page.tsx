@@ -8,9 +8,17 @@ import { brand } from "@/lib/brand";
 import { imgPath } from "@/lib/imgPath";
 
 export const metadata = {
-  title: "About Us",
+  title: "About Us — A Family Mango Farm Near Multan Since 1982",
   description:
-    "The story of Thaheem Fruit Farms — a family-owned mango farm near Multan, Pakistan, growing premium export-quality mangoes since 1982.",
+    "The story of Thaheem Fruit Farms — a family-owned mango orchard near Multan, Pakistan, growing premium export-quality Sindhri, Anwar Ratool, Chaunsa and White Chaunsa mangoes since 1982.",
+  alternates: { canonical: "/about/" },
+  openGraph: {
+    title: "About Thaheem Fruit Farms — A Family Mango Farm Since 1982",
+    description:
+      "Four decades of family farming in Ghouspur Thaheem, near Multan — the story behind our export-quality mango boxes.",
+    url: "https://thaheemfruitfarms.com/about/",
+    type: "article",
+  },
 };
 
 const milestones = [
@@ -70,7 +78,7 @@ export default function AboutPage() {
             <div className="relative aspect-[5/6] overflow-hidden rounded-[2.5rem] ring-1 ring-bark/10 shadow-soft">
               <Image
                 src={imgPath("/images/farm/orchard-golden-hour.jpg")}
-                alt="The Thaheem orchard"
+                alt="Mango trees at Thaheem Fruit Farms orchard near Multan, Pakistan, at golden hour"
                 fill
                 sizes="(min-width:1024px) 40vw, 90vw"
                 className="object-cover"

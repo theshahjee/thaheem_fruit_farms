@@ -111,7 +111,7 @@ export default function Hero() {
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[6px] ring-1 ring-ink/15 shadow-ink">
               <Image
                 src={imgPath("/images/farm/orchard-golden-hour.jpg")}
-                alt="Sunset over the Thaheem Fruit Farms orchard"
+                alt="Sunset over the Thaheem Fruit Farms mango orchard near Multan, Pakistan"
                 fill
                 priority
                 sizes="(min-width:1024px) 40vw, 90vw"

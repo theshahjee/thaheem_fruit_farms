@@ -5,9 +5,17 @@ import Reveal from "@/components/Reveal";
 import { Box, Calendar, Truck } from "lucide-react";
 
 export const metadata = {
-  title: "Pre-Booking",
+  title: "Pre-Book Premium Mangoes — Season 2026 Delivery Across Pakistan",
   description:
-    "Pre-book your premium export-quality mangoes from Thaheem Fruit Farms. Select variety, box size and delivery city.",
+    "Pre-book Sindhri, Anwar Ratool, Royal Chaunsa, White Chaunsa and 12 No Ratool mangoes for Season 2026. Hand-graded export-quality boxes delivered farm-direct across Karachi, Lahore, Islamabad, Multan and beyond.",
+  alternates: { canonical: "/pre-booking/" },
+  openGraph: {
+    title: "Pre-Book Premium Mangoes — Thaheem Fruit Farms Season 2026",
+    description:
+      "Reserve farm-direct, export-quality mangoes. Pick a variety, box size and city — we ripen and dispatch at peak.",
+    url: "https://thaheemfruitfarms.com/pre-booking/",
+    type: "website",
+  },
 };
 
 const steps = [

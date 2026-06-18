@@ -22,3 +22,7 @@ export const nav = [
   { href: "/farm-visit", label: "Farm Visit" },
   { href: "/contact", label: "Contact Us" },
 ] as const;
+
+export const footerExtras = [
+  { href: "/journal/", label: "Journal" },
+] as const;

@@ -7,9 +7,17 @@ import SectionHeading from "@/components/SectionHeading";
 import { imgPath } from "@/lib/imgPath";
 
 export const metadata = {
-  title: "Farm Visit",
+  title: "Farm Visit — Walk Our Mango Orchard Near Multan",
   description:
-    "Visit Thaheem Fruit Farms in Ghouspur Thaheem, Tehsil Kabirwala. Walk the orchard, watch packing and experience export quality firsthand.",
+    "Visit Thaheem Fruit Farms in Ghouspur Thaheem, Tehsil Kabirwala, near Multan. Walk the orchard, watch hand-grading and packing, taste mangoes straight from the tree — May to September.",
+  alternates: { canonical: "/farm-visit/" },
+  openGraph: {
+    title: "Visit Thaheem Fruit Farms — A Family Mango Orchard Near Multan",
+    description:
+      "An open farm. Walk the orchard, watch packing, taste the standard — experience export quality firsthand.",
+    url: "https://thaheemfruitfarms.com/farm-visit/",
+    type: "website",
+  },
 };
 
 const experiences = [
@@ -55,7 +63,7 @@ export default function FarmVisitPage() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] ring-1 ring-bark/10 shadow-soft">
               <Image
                 src={imgPath("/images/farm/orchard-golden-hour.jpg")}
-                alt="Thaheem orchard"
+                alt="The Thaheem Fruit Farms mango orchard in Ghouspur Thaheem, near Multan"
                 fill
                 sizes="(min-width:1024px) 40vw, 90vw"
                 className="object-cover"

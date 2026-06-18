@@ -20,7 +20,7 @@ export default function StoryPreview() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[6px] ring-1 ring-ink/15 shadow-ink">
               <Image
                 src={imgPath("/images/farm/orchard-golden-hour.jpg")}
-                alt="Rows of mango trees at Thaheem Fruit Farms"
+                alt="Rows of mature mango trees at Thaheem Fruit Farms, growing premium export varieties since 1982"
                 fill
                 sizes="(min-width:1024px) 40vw, 90vw"
                 className="object-cover"

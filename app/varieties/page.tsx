@@ -5,9 +5,17 @@ import CTABanner from "@/components/CTABanner";
 import { varieties } from "@/lib/varieties";
 
 export const metadata = {
-  title: "Our Varieties",
+  title: "Mango Varieties — Sindhri, Anwar Ratool, Chaunsa & More",
   description:
-    "Premium export-quality mango varieties from Thaheem Fruit Farms — Sindhri, Anwar Ratool, Royal Chaunsa, White Chaunsa, 12 No Ratool.",
+    "Five premium export-quality mango varieties from Thaheem Fruit Farms near Multan — Export Royal Sindhri, Aseel Anwar Ratool, Royal Chaunsa, White Chaunsa and 12 No Ratool. Hand-graded, farm-direct.",
+  alternates: { canonical: "/varieties/" },
+  openGraph: {
+    title: "Our Mango Varieties — Thaheem Fruit Farms",
+    description:
+      "Five premium export-quality cultivars, hand-graded on our family orchard near Multan.",
+    url: "https://thaheemfruitfarms.com/varieties/",
+    type: "website",
+  },
 };
 
 export default function VarietiesPage() {

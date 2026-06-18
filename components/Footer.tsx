@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import Logo from "./Logo";
-import { brand, nav } from "@/lib/brand";
+import { brand, nav, footerExtras } from "@/lib/brand";
 
 export default function Footer() {
   return (
@@ -43,7 +43,7 @@ export default function Footer() {
             Explore
           </h4>
           <ul className="mt-5 space-y-2.5">
-            {nav.map((item) => (
+            {[...nav, ...footerExtras].map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
