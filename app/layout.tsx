@@ -80,10 +80,10 @@ export const metadata: Metadata = {
     locale: "en_PK",
     images: [
       {
-        url: "/og.jpg",
+        url: "/og/home.jpg",
         width: 1200,
         height: 630,
-        alt: "Thaheem Fruit Farms orchard at golden hour — Multan, Pakistan",
+        alt: "Thaheem Fruit Farms — premium export-quality mangoes from Multan, since 1982",
       },
     ],
   },
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     title: `${brand.name} — ${brand.tagline}`,
     description:
       "Premium export-quality mangoes from our family orchard near Multan — pre-book the Season 2026 harvest.",
-    images: ["/og.jpg"],
+    images: ["/og/home.jpg"],
   },
   robots: {
     index: true,
